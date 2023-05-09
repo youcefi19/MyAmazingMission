@@ -1,0 +1,104 @@
+classe Node {
+	int value;
+	Node next;
+}
+
+classe LinkedList {
+	Node root;
+}
+
+fonction CountNodes(LinkedList list) : int {
+
+	int count := 0;
+	Node current := list.root;
+	while (current not NULL) do {
+		count := count + 1;
+		current := current.next;
+	}
+	
+	return count;
+}
+
+fonction FindMiddle(LinkedList list) : Node {
+	
+	int count := CountNodes(liste)
+	if (count = 0) return NULL;
+	else if (count = 1) return list.root;
+	else {
+		int middle := count / 2;
+		Node target := list.root;
+		for(i = 0, i < milieu, i++) {
+			target := target.next;
+		}
+		return target;
+	}
+	
+fonction Previous(LinkedList list, Node node) : Node {
+	
+	Node current := list.root;
+	
+	while (current <> NULL AND current.next <> node) do {
+		current = current.next;
+	}
+	
+	return current;
+}
+
+fonction Remove(LinkedList list, Node node) {
+
+	Node previous = Previous(list, node);
+	if (previous = NULL) {
+		list.root = node.next;
+	}
+	else {
+		previous.next = node.next;
+	}
+}
+
+fonction Invert(LinkedList list) {
+	
+	Node previous := NULL;
+	Node current := list.root;
+	
+	while (current <> NULL) {
+		Node next := current.next;
+		current.next := previous;
+		previous := current;
+		current := next;
+	}
+	
+	list.root := previous;
+}
+
+fonction InsertRoot(LinkedList list, Node node) {
+	
+	if (list.root = NULL) list.root = node;
+	else {
+		node.next := list.root;
+		list.root := node;
+	}
+}
+
+fonction InsertAfter(LinkedList list, Node target, Node newNode) {
+
+	if (list.root = NULL) {
+		list.root := newNode;
+		list.root.next := NULL;
+	}
+	else {
+		newNode.next := target.next;
+		target.next := newNode;
+	}
+}
+
+fonction InsertBefore(LinkedList list, Node target, Node newNode) {
+	Node previous := Previous(list, target);
+	if (previous = NULL) {
+		list.root := newNode
+		newNode.next := target;
+	}
+	else {
+		previous.next := newNode;
+		newNode.next := target;
+	}
+}

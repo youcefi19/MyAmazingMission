@@ -1,0 +1,43 @@
+Différence entre Array et Linked List
+
+	Array : 
+		
+		- les éléments sont stockés dans un espace mémoire contigu, de taille statique pré-allouée.		
+		- accès en O(1) directement par index.
+		- généralement complexité plus grande pour les opérations d'insertion et suppression.
+		- utilisation de mémoire non efficace, à cause de l'espace alloué mais non utilisé.
+
+	Linked List :
+		
+		- les éléments sont stockés aléatoirement en mémoire, dans un espace alloué dynamiquement.
+		- accès en O(n) car il faut parcourir les noeuds pour trouver la cible.
+		- généralement complexité plus petite pour les opérations d'insertion et suppression.
+		- utilisation de mémoire efficace car l'espace peut être libéré au besoin.
+
+Les méthodes de Tri :
+	
+	Tri par fusion (bubble sort) :
+	
+		- Simple à implémenter
+		- Très lent
+		- Comparer les cellules voisines et les permuter si besoin
+		- Faire autant de passes sur le tableau jusqu'à une passe sans permutations.
+		- Complexité en O(n²), le pire cas étant un tableau trié dans l'ordre inverse.
+		
+	Tri par insertion (insertion sort) :
+		
+		- Simple à comprendre et utiliser.
+		- Bon pour les petites séquences mais peu performant pour de larges séquences.
+		- Insérer chaque élément à son bon emplacement en le comparant avec chaque élément déjà trié à gauche.
+		- Complexité en O(n²)
+	
+	Tri par fusion (merge sort) :
+		
+		- diviser le tableau en 2 parties gauche et droite, récursivement jusqu'à atteindre une longueur de 1
+		- comparer les parties gauche et droite et remonter dans la stack progressivement avec des parties maintenant triées.
+		- Complexité O(n log n) au pire cas.
+		- Très optimisé mais compliqué à comprendre.
+	
+	Tri rapide :
+	
+		- ...
